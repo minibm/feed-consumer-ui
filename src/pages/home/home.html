@@ -8,11 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
+  <h3>To start using Ionic</h3>
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    To install ionic cli, see this <a href="http://ionicframework.com/">docs</a> to find out more.
   </p>
+
+  <button ion-button [navPush]="newProject">How to create a project</button>
+  <button ion-button [navPush]="newPage">How to add a new page</button>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
