@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 270:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__start__ = __webpack_require__(200);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StartPageModule", function() { return StartPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__new_project__ = __webpack_require__(49);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewProjectPageModule", function() { return NewProjectPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,26 +18,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var StartPageModule = (function () {
-    function StartPageModule() {
+var NewProjectPageModule = (function () {
+    function NewProjectPageModule() {
     }
-    return StartPageModule;
+    return NewProjectPageModule;
 }());
-StartPageModule = __decorate([
+NewProjectPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__start__["a" /* StartPage */],
+            __WEBPACK_IMPORTED_MODULE_2__new_project__["a" /* NewProjectPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__start__["a" /* StartPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__new_project__["a" /* NewProjectPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__start__["a" /* StartPage */]
+            __WEBPACK_IMPORTED_MODULE_2__new_project__["a" /* NewProjectPage */]
         ]
     })
-], StartPageModule);
+], NewProjectPageModule);
 
-//# sourceMappingURL=start.module.js.map
+//# sourceMappingURL=new-project.module.js.map
 
 /***/ })
 
