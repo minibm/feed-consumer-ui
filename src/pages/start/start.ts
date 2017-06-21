@@ -24,20 +24,20 @@ export class StartPage {
   }
 
   analyseFeed(url) {
-    console.log(url);
-    this.feedProvider.analyseFeed(url);
-
+    let doc;
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
 
     loading.present();
 
-    setTimeout(() => {
+    this.feedProvider.analyseFeed(url).subscribe(res => {
       loading.dismiss();
-      this.navCtrl.push(MapperPage, { url: url });
-    }, 1000);
-
+      doc = res.json();
+      this.navCtrl.push(MapperPage, { doc: doc });
+    }, err => {
+      console.error(err);
+    });;
   }
 
 }

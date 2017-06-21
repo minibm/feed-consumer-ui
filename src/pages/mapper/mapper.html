@@ -14,44 +14,24 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label>Title</ion-label>
-    <ion-select [(ngModel)]="titleField">
-      <ion-option value="f">feed.body</ion-option>
-      <ion-option value="m">feed.description</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label>Description</ion-label>
-    <ion-select [(ngModel)]="field">
-      <ion-option value="f">feed.body</ion-option>
-      <ion-option value="m">feed.description</ion-option>
-    </ion-select>
-    <input type="text">
-  </ion-item>
-  <ion-item>Elements</ion-item>
-  <ion-item>
-    <ion-select [(ngModel)]="elemfield">
-      <ion-option value="f">feed.body</ion-option>
-      <ion-option value="m">feed.description</ion-option>
-    </ion-select>
-    <ion-select [(ngModel)]="elemType">
-      <ion-option value="f">Text</ion-option>
-      <ion-option value="m">Link</ion-option>
-      <ion-option value="m">Number</ion-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-select [(ngModel)]="elemfield">
-      <ion-option value="f">feed.body</ion-option>
-      <ion-option value="m">feed.description</ion-option>
-    </ion-select>
-    <ion-select [(ngModel)]="elemType">
-      <ion-option value="f">Text</ion-option>
-      <ion-option value="m">Link</ion-option>
-      <ion-option value="m">Number</ion-option>
+  <ion-card>
+    <ion-card-title>Sample</ion-card-title>
+    <ion-card-content>
+    <pre><code>{{summaryString}}
+      </code></pre>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-item>Mappings</ion-item>
+  <ion-item *ngFor="let field of flattenList">
+    <ion-label>{{field.key}}</ion-label>
+    <ion-select #type (ionChange)="onChange(field.key, type.value)">
+      <ion-option value="__TITLE__">Title</ion-option>
+      <ion-option value="__TEXT__">Text</ion-option>
+      <ion-option value="__LINK__">Link</ion-option>
+      <ion-option value="__NUMBER__">Number</ion-option>
     </ion-select>
   </ion-item>
 
-<button ion-button (click)="saveMapping()">Save Mapping</button>
+<button ion-button (click)="saveMapping()">Save</button>
 </ion-content>

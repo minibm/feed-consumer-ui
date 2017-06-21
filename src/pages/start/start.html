@@ -16,7 +16,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>Feed URL</ion-label>
-    <ion-input type="text" #feedurl></ion-input>
+    <ion-input type="text" #feedurl value="http://www.smh.com.au/rssheadlines/top.xml"></ion-input>
     <button ion-button item-end (click)="analyseFeed(feedurl.value)">Go</button>
   </ion-item>
 

@@ -16,11 +16,10 @@ export class FeedAnalyserProvider {
   }
 
   analyseFeed(url: string) {
-    this.http.get(url).subscribe(res => {
-      console.log(res);
-    }, err => {
-      console.error(err);
-    });
+    return this.http.get(`http://localhost:3000/fetch?url=${url}`);
   }
 
+  generateType(doc) {
+    return this.http.post('http://localhost:3000/create', doc);
+  }
 }
