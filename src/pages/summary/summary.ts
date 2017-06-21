@@ -14,7 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SummaryPage {
 
+  contentNumber;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.contentNumber = navParams.get("contentNumber");
   }
 
   ionViewDidLoad() {

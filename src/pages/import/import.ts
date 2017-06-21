@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { SummaryPage } from "../summary/summary";
+import { FeedAnalyserProvider } from "../../providers/feed-analyser/feed-analyser";
 
 /**
  * Generated class for the ImportPage page.
@@ -15,7 +16,13 @@ import { SummaryPage } from "../summary/summary";
 })
 export class ImportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
+  doc: any;
+  content: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public feedService: FeedAnalyserProvider) {
+    this.doc = navParams.get("doc");
+    this.content = JSON.stringify(navParams.get("content"), null, ' ');
+    console.dir(this);
   }
 
   ionViewDidLoad() {
@@ -29,10 +36,11 @@ export class ImportPage {
 
     loading.present();
 
-    setTimeout(() => {
+    this.feedService.importContents(this.doc).subscribe(res => {
       loading.dismiss();
-      this.navCtrl.push(SummaryPage);
-    }, 1000);
-
+      this.navCtrl.push(SummaryPage, {contentNumber: res.json().imported });
+    }, err => {
+      loading.dismiss();
+    })
   }
 }

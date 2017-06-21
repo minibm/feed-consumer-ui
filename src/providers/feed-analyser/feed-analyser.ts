@@ -22,4 +22,8 @@ export class FeedAnalyserProvider {
   generateType(doc) {
     return this.http.post('http://localhost:3000/create', doc);
   }
+
+  importContents(doc) {
+    return this.http.post('http://localhost:3000/run', doc);
+  }
 }

@@ -21,6 +21,9 @@
       </code></pre>
       </ion-card-content>
   </ion-card>
+  <ion-item><ion-label floating>Type Name</ion-label>
+  <ion-input type="text" [(ngModel)]="typeName" value=""></ion-input>
+</ion-item>
 
   <ion-item>Mappings</ion-item>
   <ion-item *ngFor="let field of flattenList">
@@ -33,5 +36,5 @@
     </ion-select>
   </ion-item>
 
-<button ion-button (click)="saveMapping()">Save</button>
+<button ion-button (click)="saveMapping()">Save Mapping</button>
 </ion-content>

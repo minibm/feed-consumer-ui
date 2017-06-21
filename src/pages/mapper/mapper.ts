@@ -27,6 +27,8 @@ export class MapperPage {
 
    summaryString: string;
 
+   typeName: string;
+
    constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public feedService: FeedAnalyserProvider) {
     let doc = navParams.get("doc");
 
@@ -53,9 +55,14 @@ export class MapperPage {
     loading.present();
 
     this.rawDoc.sample = this.flattenObject;
+    this.rawDoc.typeName = this.typeName;
     this.feedService.generateType(this.rawDoc).subscribe( res => {
       loading.dismiss();
-      this.navCtrl.push(ImportPage);
+      this.navCtrl.push(ImportPage, {doc: res.json(), content: res.json().previewContent});
+      // this.feedService.importContents(res.json()).subscribe( res => {
+      //   loading.dismiss();
+      //   this.navCtrl.push(ImportPage);
+      // })
     }, err => {
       loading.dismiss();
 
